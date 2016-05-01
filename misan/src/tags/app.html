@@ -1,6 +1,6 @@
 <app>
     <video class="background-video" src="assets/inexor.mp4" autoplay loop></video>
-    <main layout="row">
+    <main layout="row" layout-align="space-around center">
         <nav flex="15">
             <ul layout="column">
                 <li onclick={select} flex-end={ item.order=='end'} each={item in items}>
@@ -10,25 +10,36 @@
         </nav>
         <section
             flex="85"
-            class="ui"
-            flex-offset="15">
-            <h1>{title}</h1>
-            <div>
-                <div layout="row" layout-align="space-between">
-                    <div layout="column" class="name">
-                        <span>Misan</span>
-                        <span>mX</span>
+            layout
+            layout-align="center center"
+            class="ui">
+            <div class="sections">
+                <div class="user-info">
+                    <h1>{title}</h1>
+                    <div layout="row" layout-align="space-between">
+                        <div layout="column" class="name">
+                            <span>Misan</span>
+                            <span>mX</span>
+                        </div>
+                        <img class="avatar" src="" alt="">
                     </div>
-                    <img class="avatar" src="" alt="">
+                    <div style="width: 320px">
+                        <h5>Overall Statistics</h5>
+                        <hr>
+                        <div layout="row" layout-align="space-between">
+                            <span>Kills : 50</span>
+                            <span>Death : 50</span>
+                            <span>KDR : 1</span>
+                        </div>
+                    </div>
                 </div>
                 <div layout="row">
                     <div class="last server">
                         <h5>Last maps:</h5>
-                        <div layout="row" layout-wrap>
+                        <div class="maps" layout="row" layout-wrap>
                             <div
                                 layout-align="center center"
                                 layout="column"
-                                class="map"
                                 each={map in maps}>
                                 {map}
                             </div>
